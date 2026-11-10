@@ -26,6 +26,6 @@ Para dúvidas, solicitações ou informações relacionadas à privacidade, entr
 
 ## Desenvolvedor
 
-SysCore – Aplicativo Android de monitoramento e desempenho.
+SysCore – Aplicativo Android de monitoramento inteligente e desempenho.
 
-© 2026 SysCore. Todos os direitos reservados.
+© 2026 Mallard Labs. Todos os direitos reservados.
