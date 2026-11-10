@@ -18,7 +18,7 @@ A Política de Privacidade descreve como as informações do usuário e do dispo
 
 **Acesse a Política de Privacidade:**
 
-https://SEU-USUARIO.github.io/syscore-privacy/
+https://mallardlabs-dev.github.io/syscore-privacy/
 
 ## Contato
 
