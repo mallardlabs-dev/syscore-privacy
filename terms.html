@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SysCore — Termos de Uso / Terms of Use</title>
+<meta name="description" content="Termos de Uso do aplicativo SysCore, da Mallard Labs. Terms of Use for the SysCore app by Mallard Labs.">
+<style>
+  :root{
+    --bg:#0b1220; --card:#111a2e; --line:#1e2a44; --text:#dbe4f3; --muted:#8fa0bd;
+    --accent:#3b82f6; --accent2:#60a5fa;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,18,32,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{max-width:860px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{font-weight:700;letter-spacing:.3px}
+  .brand span{color:var(--accent2)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .lang button{background:transparent;color:var(--muted);border:0;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--accent);color:#fff}
+  main{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:1.9rem;margin:.2em 0 .1em}
+  .meta{color:var(--muted);font-size:.92rem;margin-bottom:24px}
+  h2{font-size:1.15rem;color:var(--accent2);margin:32px 0 8px;padding-top:6px;border-top:1px solid var(--line)}
+  p,li{color:var(--text)}
+  ul{padding-left:1.3em}
+  a{color:var(--accent2)}
+  .note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:10px;padding:14px 16px;margin:16px 0}
+  footer{color:var(--muted);font-size:.85rem;text-align:center;padding:20px;border-top:1px solid var(--line)}
+  /* Sem JavaScript, as duas versões aparecem. Com JS, só a escolhida. */
+  html.js [data-lang]{display:none}
+  html.js.show-pt [data-lang="pt"], html.js.show-en [data-lang="en"]{display:block}
+</style>
+<script>
+  // ====== CONFIGURAÇÃO ======
+  var CONTACT_EMAIL = "mallardlabs.dev@gmail.com"; // troque pelo mesmo e-mail da política de privacidade
+  // ==========================
+  (function(){
+    var h=document.documentElement; h.classList.add("js");
+    var q=new URLSearchParams(location.search).get("lang");
+    var hash=location.hash.replace("#","");
+    var saved=null; try{saved=localStorage.getItem("syscore_lang")}catch(e){}
+    var nav=(navigator.language||"pt").toLowerCase();
+    var lang = (q==="en"||q==="pt") ? q : (hash==="en"||hash==="pt") ? hash
+             : (saved==="en"||saved==="pt") ? saved : (nav.indexOf("pt")===0 ? "pt" : "en");
+    h.classList.add("show-"+lang);
+    h.setAttribute("lang", lang==="pt" ? "pt-BR" : "en");
+    window.__lang=lang;
+  })();
+</script>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">Sys<span>Core</span> · Mallard Labs</div>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="pt">PT</button>
+      <button type="button" data-set="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== PORTUGUÊS ===================== -->
+<article data-lang="pt">
+  <h1>Termos de Uso do SysCore</h1>
+  <div class="meta">Última atualização: 10 de novembro de 2026</div>
+
+  <p>Estes Termos de Uso ("Termos") regem o uso do aplicativo <strong>SysCore</strong> ("App"), desenvolvido e publicado pela <strong>Mallard Labs</strong> ("nós"). Ao baixar, instalar ou usar o App, você concorda com estes Termos. Se não concordar, não use o App.</p>
+
+  <h2>1. O que é o SysCore</h2>
+  <p>O SysCore é um aplicativo Android de monitoramento e diagnóstico do dispositivo. Ele mostra informações de bateria, carregamento, CPU, GPU, memória, armazenamento e rede, além de testes de hardware, benchmark, sessões de monitoramento para jogos e ferramentas de limpeza de armazenamento.</p>
+
+  <h2>2. Licença de uso</h2>
+  <p>Concedemos a você uma licença pessoal, limitada, não exclusiva, intransferível e revogável para usar o App em dispositivos que você possui ou controla, para fins pessoais e não comerciais. Você não pode:</p>
+  <ul>
+    <li>copiar, modificar, descompilar, fazer engenharia reversa ou criar obras derivadas do App, exceto quando a lei permitir expressamente;</li>
+    <li>contornar travas de recursos, anúncios, assinaturas ou códigos de acesso;</li>
+    <li>revender, alugar ou redistribuir o App ou seus recursos pagos;</li>
+    <li>usar o App para qualquer finalidade ilegal ou que viole direitos de terceiros.</li>
+  </ul>
+
+  <h2>3. Versão gratuita e anúncios</h2>
+  <p>A versão gratuita do App exibe anúncios fornecidos pelo Google AdMob. Algumas funções premium podem ser liberadas temporariamente assistindo a um anúncio recompensado. Antes de assistir, o App informa o que será liberado (por exemplo, uma única sessão no modo Gamer). A recompensa só é concedida quando o anúncio é assistido até o fim, e depende da disponibilidade de anúncios, que não controlamos.</p>
+
+  <h2>4. SysCore Pro (assinatura)</h2>
+  <ul>
+    <li>O SysCore Pro libera recursos adicionais e remove os anúncios. Os recursos incluídos podem ser vistos dentro do App.</li>
+    <li>Assinaturas são vendidas e cobradas exclusivamente pelo <strong>Google Play</strong>. Preço, moeda, período e eventual teste gratuito aparecem antes da compra.</li>
+    <li>A assinatura <strong>renova automaticamente</strong> ao fim de cada período, a menos que você cancele pelo menos 24 horas antes, em Google Play › Pagamentos e assinaturas › Assinaturas.</li>
+    <li>Ao cancelar, você mantém o acesso Pro até o fim do período já pago.</li>
+    <li>Reembolsos seguem as <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">políticas de reembolso do Google Play</a>, sem prejuízo dos direitos garantidos pela lei do consumidor do seu país (como o direito de arrependimento do Código de Defesa do Consumidor, no Brasil).</li>
+    <li>Desinstalar o App não cancela a assinatura.</li>
+  </ul>
+
+  <h2>5. Códigos de acesso promocionais</h2>
+  <p>Podemos fornecer códigos que liberam o Pro por tempo limitado para revisores, testadores ou promoções. Esses códigos são pessoais, não podem ser vendidos nem trocados por dinheiro, têm prazo de validade e podem ser encerrados ou substituídos por nós a qualquer momento, inclusive em caso de uso indevido ou compartilhamento público.</p>
+
+  <h2>6. Limpeza de armazenamento</h2>
+  <div class="note"><strong>Importante:</strong> arquivos excluídos pela ferramenta de limpeza são apagados de forma <strong>permanente</strong> e podem não ser recuperáveis.</div>
+  <p>O App só exclui os itens que você seleciona e confirma. Você é responsável por revisar o que vai excluir e por manter cópias de segurança de arquivos importantes. Não nos responsabilizamos pela perda de dados resultante de exclusões confirmadas por você.</p>
+
+  <h2>7. Benchmark, testes e modo estresse</h2>
+  <p>Benchmarks e testes de estresse usam intensamente CPU, GPU, memória e armazenamento, o que pode aquecer o aparelho, consumir mais bateria e deixá-lo lento temporariamente. Use esses recursos por sua conta. Você pode interromper um teste a qualquer momento. Não use o App durante o carregamento em locais sem ventilação ou com o aparelho visivelmente danificado.</p>
+
+  <h2>8. Precisão das informações</h2>
+  <p>Os dados exibidos vêm do sistema Android e dos sensores do aparelho, e parte deles é calculada ou estimada pelo App (por exemplo, saúde da bateria, tempo restante, potência do carregador e pontuações de benchmark). Os valores variam por fabricante e modelo e <strong>não têm garantia de exatidão</strong>. Não use o App como única base para decisões técnicas, de segurança ou de compra.</p>
+
+  <h2>9. Privacidade</h2>
+  <p>O tratamento de dados é descrito na nossa <a href="https://mallardlabs-dev.github.io/syscore-privacy/" target="_blank" rel="noopener">Política de Privacidade</a>, que faz parte destes Termos.</p>
+
+  <h2>10. Propriedade intelectual</h2>
+  <p>O App, seu código, design, nome, logotipo e conteúdo pertencem à Mallard Labs ou aos seus licenciadores. Marcas de terceiros (como Android e Google Play) pertencem aos seus titulares.</p>
+
+  <h2>11. Isenção de garantias</h2>
+  <p>Na extensão máxima permitida por lei, o App é fornecido "no estado em que se encontra" e "conforme disponível", sem garantias de funcionamento ininterrupto, livre de erros ou compatível com todos os aparelhos.</p>
+
+  <h2>12. Limitação de responsabilidade</h2>
+  <p>Na extensão máxima permitida por lei, a Mallard Labs não responde por danos indiretos, incidentais ou consequentes, perda de dados, lucros cessantes ou danos ao aparelho decorrentes do uso ou da impossibilidade de uso do App. Nada nestes Termos limita direitos que não podem ser afastados pela lei aplicável, incluindo os direitos do consumidor.</p>
+
+  <h2>13. Alterações</h2>
+  <p>Podemos atualizar o App, adicionar ou remover recursos e alterar estes Termos. A data no topo desta página indica a versão em vigor. Mudanças relevantes serão comunicadas no App ou na página da Play Store. Continuar usando o App depois das mudanças significa aceitar os novos Termos.</p>
+
+  <h2>14. Encerramento</h2>
+  <p>Você pode deixar de usar o App a qualquer momento, desinstalando-o (e cancelando a assinatura no Google Play, se houver). Podemos suspender o acesso a recursos pagos ou promocionais se estes Termos forem violados.</p>
+
+  <h2>15. Lei aplicável</h2>
+  <p>Estes Termos são regidos pelas leis da República Federativa do Brasil, sem prejuízo das normas de proteção ao consumidor do país em que você reside que sejam obrigatórias.</p>
+
+  <h2>16. Contato</h2>
+  <p>Dúvidas sobre estes Termos: <a class="mail" href="#">e-mail</a>.</p>
+</article>
+
+<!-- ===================== ENGLISH ===================== -->
+<article data-lang="en">
+  <h1>SysCore Terms of Use</h1>
+  <div class="meta">Last updated: November 10, 2026</div>
+
+  <p>These Terms of Use ("Terms") govern your use of the <strong>SysCore</strong> application ("App"), developed and published by <strong>Mallard Labs</strong> ("we", "us"). By downloading, installing or using the App, you agree to these Terms. If you do not agree, do not use the App.</p>
+
+  <h2>1. What SysCore is</h2>
+  <p>SysCore is an Android app for device monitoring and diagnostics. It shows information about the battery, charging, CPU, GPU, memory, storage and network, and offers hardware tests, benchmarks, gaming monitoring sessions and storage cleanup tools.</p>
+
+  <h2>2. License</h2>
+  <p>We grant you a personal, limited, non-exclusive, non-transferable and revocable license to use the App on devices you own or control, for personal, non-commercial purposes. You may not:</p>
+  <ul>
+    <li>copy, modify, decompile, reverse engineer or create derivative works of the App, except where expressly permitted by law;</li>
+    <li>bypass feature locks, ads, subscriptions or access codes;</li>
+    <li>resell, rent or redistribute the App or its paid features;</li>
+    <li>use the App for any unlawful purpose or in a way that infringes the rights of others.</li>
+  </ul>
+
+  <h2>3. Free version and ads</h2>
+  <p>The free version of the App shows ads provided by Google AdMob. Some premium features can be unlocked temporarily by watching a rewarded ad. Before you watch, the App tells you what will be unlocked (for example, a single Gamer mode session). The reward is granted only when the ad is watched to the end and depends on ad availability, which we do not control.</p>
+
+  <h2>4. SysCore Pro (subscription)</h2>
+  <ul>
+    <li>SysCore Pro unlocks additional features and removes ads. The included features are listed inside the App.</li>
+    <li>Subscriptions are sold and billed exclusively through <strong>Google Play</strong>. Price, currency, billing period and any free trial are shown before purchase.</li>
+    <li>Subscriptions <strong>renew automatically</strong> at the end of each period unless you cancel at least 24 hours before, in Google Play › Payments &amp; subscriptions › Subscriptions.</li>
+    <li>If you cancel, you keep Pro access until the end of the period already paid for.</li>
+    <li>Refunds follow the <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play refund policies</a>, without prejudice to any rights you have under the consumer protection laws of your country.</li>
+    <li>Uninstalling the App does not cancel your subscription.</li>
+  </ul>
+
+  <h2>5. Promotional access codes</h2>
+  <p>We may provide codes that unlock Pro for a limited time to reviewers, testers or as part of promotions. These codes are personal, cannot be sold or exchanged for cash, expire, and may be ended or replaced by us at any time, including in case of misuse or public sharing.</p>
+
+  <h2>6. Storage cleanup</h2>
+  <div class="note"><strong>Important:</strong> files deleted with the cleanup tool are removed <strong>permanently</strong> and may not be recoverable.</div>
+  <p>The App only deletes items you select and confirm. You are responsible for reviewing what you delete and for keeping backups of important files. We are not responsible for data loss resulting from deletions you confirmed.</p>
+
+  <h2>7. Benchmarks, tests and stress mode</h2>
+  <p>Benchmarks and stress tests put heavy load on the CPU, GPU, memory and storage, which can heat up the device, increase battery drain and temporarily slow it down. You use these features at your own risk and can stop a test at any time. Do not run them while charging in poorly ventilated places or on a visibly damaged device.</p>
+
+  <h2>8. Accuracy of information</h2>
+  <p>The data shown comes from the Android system and the device's sensors, and some of it is calculated or estimated by the App (for example, battery health, remaining time, charger power and benchmark scores). Values vary by manufacturer and model and are <strong>not guaranteed to be accurate</strong>. Do not rely on the App as the sole basis for technical, safety or purchasing decisions.</p>
+
+  <h2>9. Privacy</h2>
+  <p>How we handle data is described in our <a href="https://mallardlabs-dev.github.io/syscore-privacy/" target="_blank" rel="noopener">Privacy Policy</a>, which forms part of these Terms.</p>
+
+  <h2>10. Intellectual property</h2>
+  <p>The App, its code, design, name, logo and content belong to Mallard Labs or its licensors. Third-party trademarks (such as Android and Google Play) belong to their respective owners.</p>
+
+  <h2>11. Disclaimer of warranties</h2>
+  <p>To the maximum extent permitted by law, the App is provided "as is" and "as available", without warranties that it will be uninterrupted, error-free or compatible with every device.</p>
+
+  <h2>12. Limitation of liability</h2>
+  <p>To the maximum extent permitted by law, Mallard Labs is not liable for indirect, incidental or consequential damages, loss of data, loss of profits or damage to your device arising from the use of, or inability to use, the App. Nothing in these Terms limits rights that cannot be waived under applicable law, including consumer rights.</p>
+
+  <h2>13. Changes</h2>
+  <p>We may update the App, add or remove features and change these Terms. The date at the top of this page shows the current version. Material changes will be announced in the App or on its Play Store page. Continuing to use the App after changes means you accept the updated Terms.</p>
+
+  <h2>14. Termination</h2>
+  <p>You may stop using the App at any time by uninstalling it (and cancelling any subscription in Google Play). We may suspend access to paid or promotional features if these Terms are violated.</p>
+
+  <h2>15. Governing law</h2>
+  <p>These Terms are governed by the laws of the Federative Republic of Brazil, without prejudice to any mandatory consumer protection rules of your country of residence.</p>
+
+  <h2>16. Contact</h2>
+  <p>Questions about these Terms: <a class="mail" href="#">email</a>.</p>
+</article>
+
+</main>
+
+<footer>© 2026 Mallard Labs · SysCore</footer>
+
+<script>
+  (function(){
+    document.querySelectorAll("a.mail").forEach(function(a){
+      a.href="mailto:"+CONTACT_EMAIL; a.textContent=CONTACT_EMAIL;
+    });
+    var h=document.documentElement, btns=document.querySelectorAll(".lang button");
+    function set(l){
+      h.classList.remove("show-pt","show-en"); h.classList.add("show-"+l);
+      h.setAttribute("lang", l==="pt"?"pt-BR":"en");
+      document.title = l==="pt" ? "SysCore — Termos de Uso" : "SysCore — Terms of Use";
+      btns.forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.set===l ? "true":"false"); });
+      try{localStorage.setItem("syscore_lang",l)}catch(e){}
+    }
+    btns.forEach(function(b){ b.addEventListener("click", function(){ set(b.dataset.set); }); });
+    set(window.__lang||"pt");
+  })();
+</script>
+</body>
+</html>
