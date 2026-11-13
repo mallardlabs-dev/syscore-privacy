@@ -87,7 +87,9 @@
   <ul>
     <li><strong>CPU, memória e desempenho:</strong> utilização, frequência, núcleos, RAM e métricas obtidas pelas ferramentas de análise.</li>
     <li><strong>Bateria e temperatura:</strong> nível, estado de carregamento, temperatura, voltagem, capacidade e indicadores térmicos disponibilizados pelo sistema.</li>
-    <li><strong>Rede:</strong> estado da conexão e informações da rede Wi-Fi, como o nome da rede (SSID). Para exibir o nome do Wi-Fi, o Android exige a permissão de localização; o SysCore a utiliza apenas para esse fim.</li>
+    <li><strong>Rede:</strong> estado da conexão e informações da rede Wi-Fi, como o nome da rede (SSID). Para exibir o nome do Wi-Fi, o Android exige a permissão de localização; o SysCore a utiliza para esse fim e para o teste de GPS (descrito abaixo).</li>
+    <li><strong>Teste de GPS (aba Testes):</strong> quando o usuário abre esse teste, o aplicativo lê o sinal do GPS do aparelho (satélites e precisão) para mostrar se o GPS está funcionando. Isso usa a permissão de localização somente enquanto o teste está aberto; a posição não é armazenada nem enviada.</li>
+    <li><strong>Teste de microfone (aba Testes):</strong> quando o usuário abre esse teste, o aplicativo usa o microfone para mostrar o nível de som na tela. O áudio é analisado na hora, no aparelho, e nunca é gravado, salvo nem enviado.</li>
     <li><strong>Aplicativos instalados:</strong> o nome e o ícone de aplicativos com ícone de lançamento (como jogos e apps comuns), para que o usuário os selecione e acompanhe o desempenho. O aplicativo não solicita a permissão de acesso à lista completa de pacotes.</li>
     <li><strong>Aplicativo em primeiro plano:</strong> na aba Gamer, com a permissão de acesso ao uso que o próprio usuário concede nas configurações do Android, para identificar qual jogo ou app está aberto.</li>
     <li><strong>Arquivos e mídia:</strong> no recurso de liberar armazenamento, o aplicativo pode acessar imagens, vídeos, áudios e outros arquivos para identificar o que ocupa espaço e permitir que o usuário os exclua.</li>
@@ -112,7 +114,7 @@
     <li>Exibir informações de monitoramento, indicadores, gráficos e estatísticas.</li>
     <li>Acompanhar estado e temperatura da bateria e registrar sessões de carregamento.</li>
     <li>Exibir o desempenho durante jogos, inclusive pelo overlay.</li>
-    <li>Executar testes e análises de desempenho, quando disponíveis.</li>
+    <li>Executar testes e análises de desempenho e de hardware (como GPS e microfone), quando o usuário os abre.</li>
     <li>Identificar arquivos que podem ser removidos para liberar espaço.</li>
     <li>Exibir a rede Wi-Fi conectada.</li>
     <li>Melhorar a estabilidade, a compatibilidade e o funcionamento do aplicativo.</li>
@@ -154,7 +156,8 @@
   <p>O SysCore solicita as permissões abaixo somente para as funcionalidades indicadas. O usuário pode gerenciá-las nas configurações do Android.</p>
   <ul>
     <li><strong>Internet e estado da rede / Wi-Fi:</strong> exibir informações de conexão e permitir anúncios e verificação de compras.</li>
-    <li><strong>Localização (precisa):</strong> exigida pelo Android para exibir o nome da rede Wi-Fi. Não é usada para rastrear a posição do usuário.</li>
+    <li><strong>Localização (precisa):</strong> exigida pelo Android para exibir o nome da rede Wi-Fi e usada no teste de GPS. Não é usada para rastrear a posição do usuário e não é armazenada nem enviada.</li>
+    <li><strong>Microfone:</strong> teste de microfone (aba Testes). É pedida somente quando o usuário abre o teste; o áudio não é gravado nem enviado.</li>
     <li><strong>Fotos, vídeos, áudio e armazenamento:</strong> recurso de liberar armazenamento.</li>
     <li><strong>Acesso ao uso de aplicativos:</strong> identificar o jogo ou app em primeiro plano na aba Gamer. Concedida pelo usuário nas configurações do Android.</li>
     <li><strong>Sobreposição a outros aplicativos:</strong> exibir o overlay de desempenho sobre jogos e apps.</li>
@@ -222,7 +225,9 @@
   <ul>
     <li><strong>CPU, memory and performance:</strong> usage, frequency, cores, RAM and metrics obtained by the analysis tools.</li>
     <li><strong>Battery and temperature:</strong> level, charging status, temperature, voltage, capacity and thermal indicators provided by the system.</li>
-    <li><strong>Network:</strong> connection status and Wi-Fi network information, such as the network name (SSID). To display the Wi-Fi name, Android requires the location permission; SysCore uses it for this purpose only.</li>
+    <li><strong>Network:</strong> connection status and Wi-Fi network information, such as the network name (SSID). To display the Wi-Fi name, Android requires the location permission; SysCore uses it for this purpose and for the GPS test (described below).</li>
+    <li><strong>GPS test (Tests tab):</strong> when the user opens this test, the app reads the device's GPS signal (satellites and accuracy) to show whether GPS is working. This uses the location permission only while the test is open; the position is not stored or sent anywhere.</li>
+    <li><strong>Microphone test (Tests tab):</strong> when the user opens this test, the app uses the microphone to show the sound level on screen. The audio is analyzed instantly on the device and is never recorded, saved or sent.</li>
     <li><strong>Installed apps:</strong> the name and icon of apps that have a launcher icon (such as games and common apps), so the user can select them and track their performance. The app does not request permission to access the full list of packages.</li>
     <li><strong>Foreground app:</strong> in the Gamer tab, with the usage access permission that the user grants in Android settings, to identify which game or app is open.</li>
     <li><strong>Files and media:</strong> in the free-up-storage feature, the app may access images, videos, audio and other files to identify what takes up space and let the user delete them.</li>
@@ -247,7 +252,7 @@
     <li>Display monitoring information, indicators, charts and statistics.</li>
     <li>Track battery status and temperature and record charging sessions.</li>
     <li>Display performance during games, including through the overlay.</li>
-    <li>Run performance tests and analyses, when available.</li>
+    <li>Run performance and hardware tests and analyses (such as GPS and microphone), when the user opens them.</li>
     <li>Identify files that can be removed to free up space.</li>
     <li>Display the connected Wi-Fi network.</li>
     <li>Improve the stability, compatibility and operation of the app.</li>
@@ -289,7 +294,8 @@
   <p>SysCore requests the permissions below only for the features indicated. The user can manage them in Android settings.</p>
   <ul>
     <li><strong>Internet and network / Wi-Fi state:</strong> display connection information and enable ads and purchase verification.</li>
-    <li><strong>Location (precise):</strong> required by Android to display the Wi-Fi network name. It is not used to track the user's position.</li>
+    <li><strong>Location (precise):</strong> required by Android to display the Wi-Fi network name and used in the GPS test. It is not used to track the user's position and is not stored or sent.</li>
+    <li><strong>Microphone:</strong> microphone test (Tests tab). It is requested only when the user opens the test; the audio is not recorded or sent.</li>
     <li><strong>Photos, videos, audio and storage:</strong> free-up-storage feature.</li>
     <li><strong>Usage access:</strong> identify the game or app in the foreground in the Gamer tab. Granted by the user in Android settings.</li>
     <li><strong>Display over other apps:</strong> show the performance overlay over games and apps.</li>
