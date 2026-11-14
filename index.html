@@ -75,7 +75,7 @@
 <!-- ===================== PORTUGUÊS ===================== -->
 <article data-lang="pt">
   <h1>Política de Privacidade</h1>
-  <div class="meta">Última atualização: 13 de novembro de 2026</div>
+  <div class="meta">Última atualização: 14 de novembro de 2026</div>
 
   <h2>1. Introdução</h2>
   <p>Esta Política de Privacidade descreve como o aplicativo SysCore, para dispositivos Android, acessa, utiliza, armazena e protege informações relacionadas ao dispositivo e ao usuário.</p>
@@ -94,6 +94,8 @@
     <li><strong>Aplicativo em primeiro plano:</strong> na aba Gamer, com a permissão de acesso ao uso que o próprio usuário concede nas configurações do Android, para identificar qual jogo ou app está aberto.</li>
     <li><strong>Arquivos e mídia:</strong> no recurso de liberar armazenamento, o aplicativo pode acessar imagens, vídeos, áudios e outros arquivos para identificar o que ocupa espaço e permitir que o usuário os exclua.</li>
     <li><strong>Sessões:</strong> registros de monitoramento, carregamento e desempenho durante jogos.</li>
+    <li><strong>Criadores (aba Criadores, versão Pro):</strong> quando o usuário inicia um teste de carregador ou de consumo, o aplicativo registra no aparelho, durante o teste, a potência, o nível e a temperatura da bateria, o tempo decorrido, o modelo do aparelho e o nome, as notas e os marcadores que o usuário digitar. Esses registros ficam somente no aparelho, não são enviados e podem ser excluídos pelo usuário no próprio aplicativo.</li>
+    <li><strong>Relatórios exportados (aba Criadores):</strong> o usuário pode gerar relatórios em imagem (PNG), PDF, CSV, JSON, TXT ou Markdown, salvá-los no aparelho (pastas Imagens ou Downloads, na pasta "SysCore") ou compartilhá-los pelo menu de compartilhamento do Android. O aplicativo não envia esses arquivos a ninguém; o que acontece depois do compartilhamento depende do aplicativo ou da pessoa escolhida pelo usuário.</li>
     <li><strong>Compras (versão Pro):</strong> o estado das suas compras e assinaturas informado pelo Google Play (por exemplo, se há assinatura ativa e até quando, ou compra vitalícia), que o aplicativo também guarda no aparelho para liberar os recursos Pro.</li>
     <li><strong>Preferências e contadores de uso:</strong> escolhas feitas no aplicativo e contadores simples (como dias de uso, testes concluídos e a sua resposta ao pedido de avaliação). Ficam somente no aparelho e não são enviados.</li>
     <li><strong>Relatórios de erro:</strong> se o aplicativo fechar por falha, ele guarda no aparelho um relatório técnico (erro, modelo do aparelho e versões do Android e do aplicativo). O relatório só é enviado se você escolher enviá-lo por e-mail.</li>
@@ -105,7 +107,7 @@
   </div>
 
   <h2>3. Armazenamento local e backup</h2>
-  <p>Históricos de bateria, registros de carregamento, sessões gamer e estatísticas são armazenados localmente no dispositivo, em armazenamento privado do aplicativo e banco de dados local (Room).</p>
+  <p>Históricos de bateria, registros de carregamento, sessões gamer, testes da aba Criadores e estatísticas são armazenados localmente no dispositivo, em armazenamento privado do aplicativo e banco de dados local (Room).</p>
   <p>A análise de arquivos do recurso de armazenamento é feita no próprio dispositivo. O SysCore não envia os arquivos do usuário nem seu conteúdo a servidores externos, e só exclui arquivos mediante ação do usuário.</p>
   <p>O aplicativo permite o backup automático do Android. Dependendo das configurações do dispositivo e das regras do aplicativo, dados locais podem ser incluídos no backup da conta Google do usuário, sob as políticas do Google e do fabricante do aparelho.</p>
 
@@ -114,6 +116,7 @@
     <li>Exibir informações de monitoramento, indicadores, gráficos e estatísticas.</li>
     <li>Acompanhar estado e temperatura da bateria e registrar sessões de carregamento.</li>
     <li>Exibir o desempenho durante jogos, inclusive pelo overlay.</li>
+    <li>Executar testes de carregador e de consumo, comparar resultados e gerar relatórios que o usuário pode salvar ou compartilhar (aba Criadores).</li>
     <li>Executar testes e análises de desempenho e de hardware (como GPS e microfone), quando o usuário os abre.</li>
     <li>Identificar arquivos que podem ser removidos para liberar espaço.</li>
     <li>Exibir a rede Wi-Fi conectada.</li>
@@ -161,7 +164,8 @@
     <li><strong>Fotos, vídeos, áudio e armazenamento:</strong> recurso de liberar armazenamento.</li>
     <li><strong>Acesso ao uso de aplicativos:</strong> identificar o jogo ou app em primeiro plano na aba Gamer. Concedida pelo usuário nas configurações do Android.</li>
     <li><strong>Sobreposição a outros aplicativos:</strong> exibir o overlay de desempenho sobre jogos e apps.</li>
-    <li><strong>Serviços em primeiro plano e notificações:</strong> manter o monitoramento e o overlay ativos e exibir a notificação exigida pelo Android.</li>
+    <li><strong>Serviços em primeiro plano e notificações:</strong> manter o monitoramento, o overlay e os testes da aba Criadores ativos e exibir a notificação exigida pelo Android.</li>
+    <li><strong>Manter o aparelho ativo (WAKE_LOCK):</strong> impedir que o processador pare durante um teste de consumo da aba Criadores iniciado pelo usuário, para que o registro não tenha falhas. É liberado ao final do teste.</li>
     <li><strong>Vibração:</strong> alertas e retorno ao usuário.</li>
     <li><strong>Faturamento do Google Play:</strong> processar as compras e assinaturas da versão Pro.</li>
     <li><strong>ID de publicidade:</strong> exibição de anúncios.</li>
@@ -169,13 +173,13 @@
   <p>O aplicativo não utiliza as permissões para finalidades diferentes das informadas.</p>
 
   <h2>9. Execução em segundo plano e overlay</h2>
-  <p>O monitoramento de bateria e o overlay de desempenho funcionam como serviços em primeiro plano, sempre iniciados pelo usuário e acompanhados de notificação. Enquanto ativos, acessam apenas as informações técnicas necessárias à funcionalidade, como RAM, CPU, bateria e rede.</p>
+  <p>O monitoramento de bateria, o overlay de desempenho e os testes de carregador e de consumo da aba Criadores funcionam como serviços em primeiro plano, sempre iniciados pelo usuário e acompanhados de notificação, com opção de finalizar o teste por ela. Os testes terminam ao serem concluídos, finalizados pelo usuário ou interrompidos, e o aplicativo não os inicia sozinho. Enquanto ativos, acessam apenas as informações técnicas necessárias à funcionalidade, como RAM, CPU, bateria e rede.</p>
 
   <h2>10. Segurança das informações</h2>
   <p>Adotamos medidas técnicas razoáveis, como armazenamento privado do aplicativo, banco de dados local protegido pelo sistema operacional e conexões seguras com serviços externos. Nenhum sistema, porém, garante segurança absoluta.</p>
 
   <h2>11. Retenção e exclusão de dados</h2>
-  <p>Os dados locais permanecem no dispositivo enquanto forem necessários ao histórico do aplicativo. O usuário pode excluir registros pelas opções do aplicativo, quando disponíveis, ou limpar os dados do app nas configurações do Android. A desinstalação remove os dados do espaço privado do aplicativo. A sua escolha de consentimento para anúncios, as preferências e os contadores de uso ficam no aparelho até você limpar os dados do aplicativo ou desinstalá-lo.</p>
+  <p>Os dados locais permanecem no dispositivo enquanto forem necessários ao histórico do aplicativo. O usuário pode excluir registros pelas opções do aplicativo (inclusive os testes da aba Criadores), ou limpar os dados do app nas configurações do Android. Relatórios salvos pelo usuário nas pastas Imagens ou Downloads são arquivos do usuário e permanecem até que ele os apague. A desinstalação remove os dados do espaço privado do aplicativo. A sua escolha de consentimento para anúncios, as preferências e os contadores de uso ficam no aparelho até você limpar os dados do aplicativo ou desinstalá-lo.</p>
   <p>Dados tratados por terceiros, como a plataforma de publicidade e o Google Play, seguem os prazos e procedimentos desses fornecedores. Para solicitar a exclusão de dados mantidos por eles, o usuário deve contatá-los diretamente.</p>
 
   <h2>12. Crianças e adolescentes</h2>
@@ -213,7 +217,7 @@
 <!-- ===================== ENGLISH ===================== -->
 <article data-lang="en">
   <h1>Privacy Policy</h1>
-  <div class="meta">Last updated: November 13, 2026</div>
+  <div class="meta">Last updated: November 14, 2026</div>
 
   <h2>1. Introduction</h2>
   <p>This Privacy Policy describes how the SysCore app for Android devices accesses, uses, stores and protects information related to the device and the user.</p>
@@ -232,6 +236,8 @@
     <li><strong>Foreground app:</strong> in the Gamer tab, with the usage access permission that the user grants in Android settings, to identify which game or app is open.</li>
     <li><strong>Files and media:</strong> in the free-up-storage feature, the app may access images, videos, audio and other files to identify what takes up space and let the user delete them.</li>
     <li><strong>Sessions:</strong> monitoring, charging and in-game performance records.</li>
+    <li><strong>Creators (Creators tab, Pro version):</strong> when the user starts a charger or power-consumption test, the app records on the device, during the test, the battery power, level and temperature, the elapsed time, the device model and the name, notes and markers the user types. These records stay on the device only, are not sent anywhere and can be deleted by the user inside the app.</li>
+    <li><strong>Exported reports (Creators tab):</strong> the user can generate reports as an image (PNG), PDF, CSV, JSON, TXT or Markdown, save them on the device (Pictures or Downloads, in the "SysCore" folder) or share them through the Android share sheet. The app does not send these files to anyone; what happens after sharing depends on the app or person the user chooses.</li>
     <li><strong>Purchases (Pro version):</strong> the status of your purchases and subscriptions as reported by Google Play (for example, whether a subscription is active and until when, or a lifetime purchase), which the app also stores on the device to unlock Pro features.</li>
     <li><strong>Preferences and usage counters:</strong> choices made in the app and simple counters (such as days of use, completed tests and your answer to the rating request). They stay on the device only and are not sent anywhere.</li>
     <li><strong>Error reports:</strong> if the app closes because of a failure, it stores a technical report on the device (error, device model and Android and app versions). The report is only sent if you choose to send it by email.</li>
@@ -243,7 +249,7 @@
   </div>
 
   <h2>3. Local storage and backup</h2>
-  <p>Battery history, charging records, gamer sessions and statistics are stored locally on the device, in the app's private storage and local database (Room).</p>
+  <p>Battery history, charging records, gamer sessions, Creators tab tests and statistics are stored locally on the device, in the app's private storage and local database (Room).</p>
   <p>File analysis for the storage feature is performed on the device itself. SysCore does not send the user's files or their content to external servers, and only deletes files upon user action.</p>
   <p>The app allows Android automatic backup. Depending on device settings and the app's rules, local data may be included in the backup of the user's Google account, under the policies of Google and the device manufacturer.</p>
 
@@ -252,6 +258,7 @@
     <li>Display monitoring information, indicators, charts and statistics.</li>
     <li>Track battery status and temperature and record charging sessions.</li>
     <li>Display performance during games, including through the overlay.</li>
+    <li>Run charger and power-consumption tests, compare results and generate reports the user can save or share (Creators tab).</li>
     <li>Run performance and hardware tests and analyses (such as GPS and microphone), when the user opens them.</li>
     <li>Identify files that can be removed to free up space.</li>
     <li>Display the connected Wi-Fi network.</li>
@@ -299,7 +306,8 @@
     <li><strong>Photos, videos, audio and storage:</strong> free-up-storage feature.</li>
     <li><strong>Usage access:</strong> identify the game or app in the foreground in the Gamer tab. Granted by the user in Android settings.</li>
     <li><strong>Display over other apps:</strong> show the performance overlay over games and apps.</li>
-    <li><strong>Foreground services and notifications:</strong> keep monitoring and the overlay active and show the notification required by Android.</li>
+    <li><strong>Foreground services and notifications:</strong> keep monitoring, the overlay and Creators tab tests active and show the notification required by Android.</li>
+    <li><strong>Keep the device awake (WAKE_LOCK):</strong> prevent the processor from sleeping during a user-started power-consumption test in the Creators tab, so the recording has no gaps. It is released when the test ends.</li>
     <li><strong>Vibration:</strong> alerts and user feedback.</li>
     <li><strong>Google Play Billing:</strong> process Pro version purchases and subscriptions.</li>
     <li><strong>Advertising ID:</strong> ad display.</li>
@@ -307,13 +315,13 @@
   <p>The app does not use these permissions for purposes other than those stated.</p>
 
   <h2>9. Background execution and overlay</h2>
-  <p>Battery monitoring and the performance overlay run as foreground services, always started by the user and accompanied by a notification. While active, they access only the technical information needed for the feature, such as RAM, CPU, battery and network.</p>
+  <p>Battery monitoring, the performance overlay and the charger and power-consumption tests in the Creators tab run as foreground services, always started by the user and accompanied by a notification, which also lets the user finish the test. Tests end when they complete, when the user finishes them or when they are interrupted, and the app never starts them on its own. While active, they access only the technical information needed for the feature, such as RAM, CPU, battery and network.</p>
 
   <h2>10. Information security</h2>
   <p>We adopt reasonable technical measures, such as the app's private storage, a local database protected by the operating system and secure connections to external services. However, no system can guarantee absolute security.</p>
 
   <h2>11. Data retention and deletion</h2>
-  <p>Local data remains on the device for as long as it is needed for the app's history. The user can delete records through the app's options, when available, or clear the app's data in Android settings. Uninstalling removes the data from the app's private storage. Your ad consent choice, preferences and usage counters stay on the device until you clear the app's data or uninstall it.</p>
+  <p>Local data remains on the device for as long as it is needed for the app's history. The user can delete records through the app's options (including Creators tab tests), or clear the app's data in Android settings. Reports the user saved to Pictures or Downloads are the user's own files and remain until the user deletes them. Uninstalling removes the data from the app's private storage. Your ad consent choice, preferences and usage counters stay on the device until you clear the app's data or uninstall it.</p>
   <p>Data processed by third parties, such as the advertising platform and Google Play, follows those providers' retention periods and procedures. To request deletion of data held by them, the user must contact them directly.</p>
 
   <h2>12. Children and teenagers</h2>
