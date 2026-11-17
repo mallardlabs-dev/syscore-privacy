@@ -75,7 +75,7 @@
 <!-- ===================== PORTUGUÊS ===================== -->
 <article data-lang="pt">
   <h1>Política de Privacidade</h1>
-  <div class="meta">Última atualização: 14 de novembro de 2026</div>
+  <div class="meta">Última atualização: 17 de novembro de 2026</div>
 
   <h2>1. Introdução</h2>
   <p>Esta Política de Privacidade descreve como o aplicativo SysCore, para dispositivos Android, acessa, utiliza, armazena e protege informações relacionadas ao dispositivo e ao usuário.</p>
@@ -101,6 +101,9 @@
     <li><strong>Compras (versão Pro):</strong> o estado das suas compras e assinaturas informado pelo Google Play (por exemplo, se há assinatura ativa e até quando, ou compra vitalícia), que o aplicativo também guarda no aparelho para liberar os recursos Pro.</li>
     <li><strong>Preferências e contadores de uso:</strong> escolhas feitas no aplicativo e contadores simples (como dias de uso, testes concluídos e a sua resposta ao pedido de avaliação). Ficam somente no aparelho e não são enviados.</li>
     <li><strong>Relatórios de erro:</strong> se o aplicativo fechar por falha, ele guarda no aparelho um relatório técnico (erro, modelo do aparelho e versões do Android e do aplicativo). O relatório só é enviado se você escolher enviá-lo por e-mail.</li>
+    <li><strong>Acesso avançado (Shizuku, opcional):</strong> se o usuário instalar o aplicativo Shizuku e autorizar o SysCore nele, o SysCore lê sensores que o Android bloqueia para apps comuns: o serviço térmico do sistema e as temperaturas dos sensores, dados da bateria (como a capacidade) e a carga e a frequência da GPU, em arquivos do sistema como /sys/class/thermal, /sys/class/power_supply, /sys/class/kgsl, /sys/kernel/gpu, /sys/kernel/ged, /sys/class/devfreq e os da GPU Mali. O acesso é usado <strong>somente para leitura</strong>: o SysCore não altera configurações do aparelho por ele. As leituras ficam somente no aparelho e não são enviadas. O usuário pode revogar a autorização no Shizuku a qualquer momento.</li>
+    <li><strong>Testes de desempenho (benchmark):</strong> para medir a velocidade do armazenamento e da memória, o aplicativo cria arquivos temporários no seu espaço privado e os apaga ao final do teste. Os resultados ficam somente no aparelho e não são enviados.</li>
+    <li><strong>Código de acesso:</strong> se o usuário resgatar um código de acesso ao Pro, o aplicativo guarda no aparelho uma versão protegida (hash) do código e a data de validade. Esses dados não são enviados.</li>
     <li><strong>Informações técnicas do dispositivo:</strong> modelo, fabricante e versão do Android, necessárias à compatibilidade.</li>
   </ul>
   <div class="card">
@@ -120,6 +123,7 @@
     <li>Exibir o desempenho durante jogos, inclusive pelo overlay.</li>
     <li>Executar testes de carregador e de consumo, comparar resultados e gerar relatórios que o usuário pode salvar ou compartilhar (aba Criadores).</li>
     <li>Executar testes e análises de desempenho e de hardware (como GPS e microfone), quando o usuário os abre.</li>
+    <li>Exibir temperaturas e dados da GPU e da bateria mais precisos pelo Shizuku, quando o usuário o habilita.</li>
     <li>Identificar arquivos que podem ser removidos para liberar espaço.</li>
     <li>Exibir a rede Wi-Fi conectada.</li>
     <li>Melhorar a estabilidade, a compatibilidade e o funcionamento do aplicativo.</li>
@@ -170,6 +174,7 @@
     <li><strong>Estado do telefone (opcional):</strong> exigida pelo Android para informar o tipo da rede móvel (4G, 5G) na aba Rede. É pedida somente quando o usuário toca em "Conceder permissão" nessa aba. O aplicativo não acessa chamadas, mensagens, contatos nem o número de telefone.</li>
     <li><strong>Manter o aparelho ativo (WAKE_LOCK):</strong> impedir que o processador pare durante um teste de consumo da aba Criadores iniciado pelo usuário, para que o registro não tenha falhas. É liberado ao final do teste.</li>
     <li><strong>Vibração:</strong> alertas e retorno ao usuário.</li>
+    <li><strong>Shizuku (opcional):</strong> ler sensores do sistema, somente se o usuário instalar o Shizuku e autorizar o SysCore nele.</li>
     <li><strong>Faturamento do Google Play:</strong> processar as compras e assinaturas da versão Pro.</li>
     <li><strong>ID de publicidade:</strong> exibição de anúncios.</li>
   </ul>
@@ -190,6 +195,7 @@
 
   <h2>13. Serviços de terceiros</h2>
   <p>O aplicativo utiliza serviços de terceiros, incluindo Google AdMob e a plataforma de consentimento do Google (publicidade e consentimento), Google Play (distribuição e cobrança) e GitHub Pages (hospedagem do arquivo de configuração e desta página). Esses fornecedores podem tratar informações técnicas conforme suas próprias políticas de privacidade, que o usuário deve consultar.</p>
+  <p>O Shizuku é um aplicativo de terceiros, de código aberto, que o próprio usuário instala e autoriza. Ele funciona somente no aparelho, e o SysCore não envia dados a ninguém por meio dele.</p>
 
   <h2>14. Direitos do usuário</h2>
   <p>Quando aplicável, o usuário pode solicitar informações sobre o tratamento de seus dados, acesso, correção, exclusão, limitação ou oposição ao tratamento, portabilidade, esclarecimentos sobre uso e compartilhamento e a revogação de consentimentos. Para isso, utilize o contato informado nesta Política.</p>
@@ -220,7 +226,7 @@
 <!-- ===================== ENGLISH ===================== -->
 <article data-lang="en">
   <h1>Privacy Policy</h1>
-  <div class="meta">Last updated: November 14, 2026</div>
+  <div class="meta">Last updated: November 17, 2026</div>
 
   <h2>1. Introduction</h2>
   <p>This Privacy Policy describes how the SysCore app for Android devices accesses, uses, stores and protects information related to the device and the user.</p>
@@ -246,6 +252,9 @@
     <li><strong>Purchases (Pro version):</strong> the status of your purchases and subscriptions as reported by Google Play (for example, whether a subscription is active and until when, or a lifetime purchase), which the app also stores on the device to unlock Pro features.</li>
     <li><strong>Preferences and usage counters:</strong> choices made in the app and simple counters (such as days of use, completed tests and your answer to the rating request). They stay on the device only and are not sent anywhere.</li>
     <li><strong>Error reports:</strong> if the app closes because of a failure, it stores a technical report on the device (error, device model and Android and app versions). The report is only sent if you choose to send it by email.</li>
+    <li><strong>Advanced access (Shizuku, optional):</strong> if the user installs the Shizuku app and authorizes SysCore in it, SysCore reads sensors that Android blocks for regular apps: the system thermal service and sensor temperatures, battery data (such as capacity) and GPU load and frequency, from system files such as /sys/class/thermal, /sys/class/power_supply, /sys/class/kgsl, /sys/kernel/gpu, /sys/kernel/ged, /sys/class/devfreq and the Mali GPU files. This access is used <strong>for reading only</strong>: SysCore does not change any device setting through it. The readings stay on the device only and are not sent anywhere. The user can revoke the authorization in Shizuku at any time.</li>
+    <li><strong>Performance tests (benchmark):</strong> to measure storage and memory speed, the app creates temporary files in its private storage and deletes them when the test ends. The results stay on the device only and are not sent anywhere.</li>
+    <li><strong>Access code:</strong> if the user redeems a Pro access code, the app stores on the device a protected version (hash) of the code and its expiry date. This data is not sent anywhere.</li>
     <li><strong>Technical device information:</strong> model, manufacturer and Android version, required for compatibility.</li>
   </ul>
   <div class="card">
@@ -265,6 +274,7 @@
     <li>Display performance during games, including through the overlay.</li>
     <li>Run charger and power-consumption tests, compare results and generate reports the user can save or share (Creators tab).</li>
     <li>Run performance and hardware tests and analyses (such as GPS and microphone), when the user opens them.</li>
+    <li>Display more accurate temperatures and GPU and battery data through Shizuku, when the user enables it.</li>
     <li>Identify files that can be removed to free up space.</li>
     <li>Display the connected Wi-Fi network.</li>
     <li>Improve the stability, compatibility and operation of the app.</li>
@@ -315,6 +325,7 @@
     <li><strong>Phone state (optional):</strong> required by Android to report the mobile network type (4G, 5G) in the Network tab. It is requested only when the user taps "Grant permission" in that tab. The app does not access calls, messages, contacts or the phone number.</li>
     <li><strong>Keep the device awake (WAKE_LOCK):</strong> prevent the processor from sleeping during a user-started power-consumption test in the Creators tab, so the recording has no gaps. It is released when the test ends.</li>
     <li><strong>Vibration:</strong> alerts and user feedback.</li>
+    <li><strong>Shizuku (optional):</strong> read system sensors, only if the user installs Shizuku and authorizes SysCore in it.</li>
     <li><strong>Google Play Billing:</strong> process Pro version purchases and subscriptions.</li>
     <li><strong>Advertising ID:</strong> ad display.</li>
   </ul>
@@ -335,6 +346,7 @@
 
   <h2>13. Third-party services</h2>
   <p>The app uses third-party services, including Google AdMob and Google's consent platform (advertising and consent), Google Play (distribution and billing) and GitHub Pages (hosting of the configuration file and of this page). These providers may process technical information under their own privacy policies, which the user should consult.</p>
+  <p>Shizuku is a third-party, open-source app that the user installs and authorizes. It works only on the device, and SysCore does not send data to anyone through it.</p>
 
   <h2>14. User rights</h2>
   <p>Where applicable, the user may request information about the processing of their data, access, correction, deletion, restriction of or objection to processing, portability, clarification about use and sharing, and withdrawal of consent. To do so, use the contact provided in this Policy.</p>
