@@ -75,7 +75,7 @@
 <!-- ===================== PORTUGUÊS ===================== -->
 <article data-lang="pt">
   <h1>Política de Privacidade</h1>
-  <div class="meta">Última atualização: 17 de novembro de 2026</div>
+  <div class="meta">Última atualização: 18 de novembro de 2026</div>
 
   <h2>1. Introdução</h2>
   <p>Esta Política de Privacidade descreve como o aplicativo SysCore, para dispositivos Android, acessa, utiliza, armazena e protege informações relacionadas ao dispositivo e ao usuário.</p>
@@ -86,7 +86,9 @@
   <p>Para disponibilizar suas funcionalidades, o SysCore acessa informações técnicas do dispositivo. Dependendo dos recursos utilizados, isso pode incluir:</p>
   <ul>
     <li><strong>CPU, memória e desempenho:</strong> utilização, frequência, núcleos, RAM e métricas obtidas pelas ferramentas de análise.</li>
-    <li><strong>Bateria e temperatura:</strong> nível, estado de carregamento, temperatura, voltagem, capacidade e indicadores térmicos disponibilizados pelo sistema.</li>
+    <li><strong>Bateria e temperatura:</strong> nível, estado de carregamento, temperatura, voltagem, corrente, contador de carga, capacidade e indicadores térmicos disponibilizados pelo sistema.</li>
+    <li><strong>Capacidade da bateria aprendida com o uso:</strong> quando o aparelho não informa a capacidade exata da bateria, o aplicativo a estima com o uso. Para isso, guarda no aparelho medições de trechos de carga e descarga (data, níveis da bateria no início e no fim, carga em mAh e temperatura), até 1.000 registros, e alguns indicadores de como o aparelho informa a carga. Se você digitar a capacidade oficial da bateria nas Configurações, esse valor também fica no aparelho. Esses dados não são enviados e podem ser apagados em Configurações › Avançado › Capacidade da bateria › "Reiniciar o aprendizado".</li>
+    <li><strong>Notificação do monitoramento:</strong> a notificação fixa mostra a bateria, a CPU ou as duas, conforme a sua escolha nas Configurações. Para mostrar a CPU, o aplicativo lê o uso e a temperatura do processador a cada poucos segundos, somente com a tela ligada. Por padrão, a notificação aparece também na tela de bloqueio, onde qualquer pessoa com o aparelho em mãos pode vê-la; você pode desligar isso nas Configurações. Nada disso é salvo além do histórico da bateria nem enviado.</li>
     <li><strong>Rede:</strong> estado da conexão e informações da rede Wi-Fi, como o nome da rede (SSID). Para exibir o nome do Wi-Fi, o Android exige a permissão de localização; o SysCore a utiliza para esse fim e para o teste de GPS (descrito abaixo).</li>
     <li><strong>Teste de velocidade (aba Rede):</strong> somente quando o usuário inicia o teste, o aplicativo baixa e envia dados de teste aos servidores de medição da Cloudflare (speed.cloudflare.com) para medir latência, download e upload. Esses dados de teste não contêm informações suas. Como em qualquer acesso a um site, a Cloudflare recebe o endereço IP e dados técnicos da conexão, tratados conforme a política de privacidade dela. O resultado fica somente no aparelho. Em rede móvel, o teste consome o seu plano de dados.</li>
     <li><strong>Teste de GPS (aba Testes):</strong> quando o usuário abre esse teste, o aplicativo lê o sinal do GPS do aparelho (satélites e precisão) para mostrar se o GPS está funcionando. Isso usa a permissão de localização somente enquanto o teste está aberto; a posição não é armazenada nem enviada.</li>
@@ -104,7 +106,7 @@
     <li><strong>Avaliação no Google Play:</strong> depois de um momento positivo (por exemplo, um teste concluído), o aplicativo pode abrir a janela de avaliação do próprio Google Play. A nota e o comentário são enviados diretamente ao Google Play; o SysCore não tem acesso a eles nem sabe se você avaliou.</li>
     <li><strong>Widgets da tela inicial:</strong> mostram dados da bateria lidos no aparelho. Nada é enviado.</li>
     <li><strong>Relatórios de erro:</strong> se o aplicativo fechar por falha, ele guarda no aparelho um relatório técnico (erro, modelo do aparelho e versões do Android e do aplicativo). O relatório só é enviado se você escolher enviá-lo por e-mail.</li>
-    <li><strong>Acesso avançado (Shizuku, opcional):</strong> se o usuário instalar o aplicativo Shizuku e autorizar o SysCore nele, o SysCore lê sensores que o Android bloqueia para apps comuns: o serviço térmico do sistema e as temperaturas dos sensores, dados da bateria (como a capacidade) e a carga e a frequência da GPU, em arquivos do sistema como /sys/class/thermal, /sys/class/power_supply, /sys/class/kgsl, /sys/kernel/gpu, /sys/kernel/ged, /sys/class/devfreq e os da GPU Mali. O acesso é usado <strong>somente para leitura</strong>: o SysCore não altera configurações do aparelho por ele. As leituras ficam somente no aparelho e não são enviadas. O usuário pode revogar a autorização no Shizuku a qualquer momento.</li>
+    <li><strong>Acesso avançado (Shizuku, opcional):</strong> se o usuário instalar o aplicativo Shizuku e autorizar o SysCore nele, o SysCore lê sensores que o Android bloqueia para apps comuns: o serviço térmico do sistema e as temperaturas dos sensores, dados da bateria (como a capacidade) e a carga e a frequência da GPU, em arquivos do sistema como /sys/class/thermal, /sys/class/power_supply, /sys/class/kgsl, /sys/kernel/gpu, /sys/kernel/ged, /sys/class/devfreq e os da GPU Mali. Para mostrar o FPS no overlay, o SysCore também lê do compositor de tela do Android (SurfaceFlinger) a lista das janelas visíveis, cujos nomes incluem o nome do app em primeiro plano, e os horários em que os quadros são exibidos; essa lista é usada somente na memória, para escolher qual janela medir, e não é salva. O acesso é usado <strong>somente para leitura</strong>: o SysCore não altera configurações do aparelho por ele. As leituras ficam somente no aparelho e não são enviadas. O usuário pode revogar a autorização no Shizuku a qualquer momento.</li>
     <li><strong>Testes de desempenho (benchmark):</strong> para medir a velocidade do armazenamento e da memória, o aplicativo cria arquivos temporários no seu espaço privado e os apaga ao final do teste. Os resultados ficam somente no aparelho e não são enviados. Se você tocar em compartilhar, o aplicativo gera uma imagem do resultado no seu espaço temporário e a entrega ao menu de compartilhamento do Android.</li>
     <li><strong>Código de acesso:</strong> se o usuário resgatar um código de acesso ao Pro, o aplicativo guarda no aparelho uma versão protegida (hash) do código e a data de validade. Esses dados não são enviados.</li>
     <li><strong>Informações técnicas do dispositivo:</strong> modelo, fabricante e versão do Android, necessárias à compatibilidade.</li>
@@ -117,16 +119,17 @@
   <h2>3. Armazenamento local e backup</h2>
   <p>Históricos de bateria, registros de carregamento, sessões gamer, testes da aba Criadores e estatísticas são armazenados localmente no dispositivo, em armazenamento privado do aplicativo e banco de dados local (Room).</p>
   <p>A análise de arquivos do recurso de armazenamento é feita no próprio dispositivo. O SysCore não envia os arquivos do usuário nem seu conteúdo a servidores externos, e só exclui arquivos mediante ação do usuário.</p>
-  <p>O aplicativo permite o backup automático do Android. Dependendo das configurações do dispositivo e das regras do aplicativo, dados locais podem ser incluídos no backup da conta Google do usuário, sob as políticas do Google e do fabricante do aparelho.</p>
+  <p>O aplicativo permite o backup automático do Android. Dependendo das configurações do dispositivo, preferências do aplicativo e o histórico de benchmark podem ser incluídos no backup da conta Google do usuário, sob as políticas do Google e do fabricante do aparelho. Dados que só fazem sentido no próprio aparelho ficam <strong>fora</strong> do backup: o histórico e os registros da bateria, as medições e a capacidade informada da bateria, o estado das compras, a escolha de consentimento para anúncios, os relatórios de erro e a configuração dos widgets.</p>
 
   <h2>4. Finalidade da utilização das informações</h2>
   <ul>
     <li>Exibir informações de monitoramento, indicadores, gráficos e estatísticas.</li>
     <li>Acompanhar estado e temperatura da bateria e registrar sessões de carregamento.</li>
+    <li>Estimar a capacidade e a saúde da bateria com as medições feitas no próprio aparelho.</li>
     <li>Exibir o desempenho durante jogos, inclusive pelo overlay.</li>
     <li>Executar testes de carregador e de consumo, comparar resultados e gerar relatórios que o usuário pode salvar ou compartilhar (aba Criadores).</li>
     <li>Executar testes e análises de desempenho e de hardware (como GPS e microfone), quando o usuário os abre.</li>
-    <li>Exibir temperaturas e dados da GPU e da bateria mais precisos pelo Shizuku, quando o usuário o habilita.</li>
+    <li>Exibir temperaturas, dados da GPU e da bateria mais precisos e o FPS no overlay pelo Shizuku, quando o usuário o habilita.</li>
     <li>Identificar arquivos que podem ser removidos para liberar espaço.</li>
     <li>Exibir a rede Wi-Fi conectada e medir a velocidade da internet, quando o usuário inicia o teste.</li>
     <li>Mostrar informações dos aplicativos instalados (aba Apps).</li>
@@ -176,6 +179,7 @@
     <li><strong>Visibilidade de aplicativos instalados:</strong> o aplicativo declara ao Android que precisa ver os apps com ícone na tela de apps (e o Shizuku, se instalado), para a aba Apps. Não usa a permissão de acesso a todos os pacotes.</li>
     <li><strong>Sobreposição a outros aplicativos:</strong> exibir o overlay de desempenho sobre jogos e apps.</li>
     <li><strong>Serviços em primeiro plano e notificações:</strong> manter o monitoramento, o overlay e os testes da aba Criadores ativos, exibir a notificação exigida pelo Android e enviar os alertas de bateria e o resumo semanal que o usuário ligar.</li>
+    <li><strong>Iniciar com o aparelho (RECEIVE_BOOT_COMPLETED):</strong> religar o monitoramento da bateria depois que o aparelho é reiniciado, somente se você o deixou ligado.</li>
     <li><strong>Estado do telefone (opcional):</strong> exigida pelo Android para informar o tipo da rede móvel (4G, 5G) na aba Rede. É pedida somente quando o usuário toca em "Conceder permissão" nessa aba. O aplicativo não acessa chamadas, mensagens, contatos nem o número de telefone.</li>
     <li><strong>Manter o aparelho ativo (WAKE_LOCK):</strong> impedir que o processador pare durante um teste de consumo da aba Criadores iniciado pelo usuário, para que o registro não tenha falhas. É liberado ao final do teste.</li>
     <li><strong>Vibração:</strong> alertas e retorno ao usuário.</li>
@@ -186,13 +190,13 @@
   <p>O aplicativo não utiliza as permissões para finalidades diferentes das informadas.</p>
 
   <h2>9. Execução em segundo plano e overlay</h2>
-  <p>O monitoramento de bateria, o overlay de desempenho e os testes de carregador e de consumo da aba Criadores funcionam como serviços em primeiro plano, acompanhados de notificação. O monitoramento de bateria vem ligado por padrão: ele começa quando você abre o aplicativo e pode ser desligado a qualquer momento em Configurações › Geral › "Monitorar a bateria em segundo plano"; a notificação dele é silenciosa. O overlay e os testes da aba Criadores são sempre iniciados por você, e os testes podem ser finalizados pela própria notificação. Os testes terminam ao serem concluídos, finalizados pelo usuário ou interrompidos, e o aplicativo não os inicia sozinho. Enquanto ativos, acessam apenas as informações técnicas necessárias à funcionalidade, como RAM, CPU, bateria e rede.</p>
+  <p>O monitoramento de bateria, o overlay de desempenho e os testes de carregador e de consumo da aba Criadores funcionam como serviços em primeiro plano, acompanhados de notificação. O monitoramento de bateria vem ligado por padrão: ele começa quando você abre o aplicativo e, enquanto estiver ligado, volta a funcionar sozinho depois que o aparelho é reiniciado ou o aplicativo é atualizado. Ele pode ser desligado a qualquer momento em Configurações › Geral › "Monitorar a bateria em segundo plano"; desligado, não volta sozinho. A notificação dele é silenciosa, e você escolhe nas Configurações o que ela mostra (bateria, CPU ou as duas) e se aparece na tela de bloqueio. O overlay e os testes da aba Criadores são sempre iniciados por você, e os testes podem ser finalizados pela própria notificação. Os testes terminam ao serem concluídos, finalizados pelo usuário ou interrompidos, e o aplicativo não os inicia sozinho. Enquanto ativos, acessam apenas as informações técnicas necessárias à funcionalidade, como RAM, CPU, bateria e rede.</p>
 
   <h2>10. Segurança das informações</h2>
   <p>Adotamos medidas técnicas razoáveis, como armazenamento privado do aplicativo, banco de dados local protegido pelo sistema operacional e conexões seguras com serviços externos. Nenhum sistema, porém, garante segurança absoluta.</p>
 
   <h2>11. Retenção e exclusão de dados</h2>
-  <p>Os dados locais permanecem no dispositivo enquanto forem necessários ao histórico do aplicativo. O usuário pode excluir registros pelas opções do aplicativo (inclusive os testes da aba Criadores), ou limpar os dados do app nas configurações do Android. Relatórios salvos pelo usuário nas pastas Imagens ou Downloads são arquivos do usuário e permanecem até que ele os apague. A desinstalação remove os dados do espaço privado do aplicativo. A sua escolha de consentimento para anúncios, as preferências e os contadores de uso ficam no aparelho até você limpar os dados do aplicativo ou desinstalá-lo.</p>
+  <p>Os dados locais permanecem no dispositivo enquanto forem necessários ao histórico do aplicativo. O usuário pode excluir registros pelas opções do aplicativo (inclusive os testes da aba Criadores), ou limpar os dados do app nas configurações do Android. As medições usadas para aprender a capacidade da bateria ficam limitadas aos 1.000 registros mais recentes e podem ser apagadas a qualquer momento em Configurações › Avançado › Capacidade da bateria. Relatórios salvos pelo usuário nas pastas Imagens ou Downloads são arquivos do usuário e permanecem até que ele os apague. A desinstalação remove os dados do espaço privado do aplicativo. A sua escolha de consentimento para anúncios, as preferências e os contadores de uso ficam no aparelho até você limpar os dados do aplicativo ou desinstalá-lo.</p>
   <p>Dados tratados por terceiros, como a plataforma de publicidade e o Google Play, seguem os prazos e procedimentos desses fornecedores. Para solicitar a exclusão de dados mantidos por eles, o usuário deve contatá-los diretamente.</p>
 
   <h2>12. Crianças e adolescentes</h2>
@@ -231,7 +235,7 @@
 <!-- ===================== ENGLISH ===================== -->
 <article data-lang="en">
   <h1>Privacy Policy</h1>
-  <div class="meta">Last updated: November 17, 2026</div>
+  <div class="meta">Last updated: November 18, 2026</div>
 
   <h2>1. Introduction</h2>
   <p>This Privacy Policy describes how the SysCore app for Android devices accesses, uses, stores and protects information related to the device and the user.</p>
@@ -242,7 +246,9 @@
   <p>To provide its features, SysCore accesses technical information about the device. Depending on the features used, this may include:</p>
   <ul>
     <li><strong>CPU, memory and performance:</strong> usage, frequency, cores, RAM and metrics obtained by the analysis tools.</li>
-    <li><strong>Battery and temperature:</strong> level, charging status, temperature, voltage, capacity and thermal indicators provided by the system.</li>
+    <li><strong>Battery and temperature:</strong> level, charging status, temperature, voltage, current, charge counter, capacity and thermal indicators provided by the system.</li>
+    <li><strong>Battery capacity learned from use:</strong> when the device does not report the exact battery capacity, the app estimates it from use. To do so, it stores on the device measurements of charge and discharge stretches (date, battery levels at the start and end, charge in mAh and temperature), up to 1,000 records, and a few indicators of how the device reports charge. If you type the battery's official capacity in Settings, that value also stays on the device. This data is not sent anywhere and can be deleted in Settings › Advanced › Battery capacity › "Restart learning".</li>
+    <li><strong>Monitoring notification:</strong> the ongoing notification shows the battery, the CPU or both, as you choose in Settings. To show the CPU, the app reads processor usage and temperature every few seconds, only while the screen is on. By default, the notification also appears on the lock screen, where anyone holding the device can see it; you can turn this off in Settings. None of this is stored beyond the battery history or sent anywhere.</li>
     <li><strong>Network:</strong> connection status and Wi-Fi network information, such as the network name (SSID). To display the Wi-Fi name, Android requires the location permission; SysCore uses it for this purpose and for the GPS test (described below).</li>
     <li><strong>Speed test (Network tab):</strong> only when the user starts the test, the app downloads and uploads test data to Cloudflare's measurement servers (speed.cloudflare.com) to measure latency, download and upload. This test data contains no information about you. As with any website, Cloudflare receives the IP address and technical connection data, handled under its privacy policy. The result stays on the device only. On mobile networks, the test uses your data plan.</li>
     <li><strong>GPS test (Tests tab):</strong> when the user opens this test, the app reads the device's GPS signal (satellites and accuracy) to show whether GPS is working. This uses the location permission only while the test is open; the position is not stored or sent anywhere.</li>
@@ -260,7 +266,7 @@
     <li><strong>Rating on Google Play:</strong> after a positive moment (for example, a completed test), the app may open Google Play's own rating dialog. The rating and review go directly to Google Play; SysCore cannot see them and does not know whether you rated the app.</li>
     <li><strong>Home screen widgets:</strong> show battery data read on the device. Nothing is sent.</li>
     <li><strong>Error reports:</strong> if the app closes because of a failure, it stores a technical report on the device (error, device model and Android and app versions). The report is only sent if you choose to send it by email.</li>
-    <li><strong>Advanced access (Shizuku, optional):</strong> if the user installs the Shizuku app and authorizes SysCore in it, SysCore reads sensors that Android blocks for regular apps: the system thermal service and sensor temperatures, battery data (such as capacity) and GPU load and frequency, from system files such as /sys/class/thermal, /sys/class/power_supply, /sys/class/kgsl, /sys/kernel/gpu, /sys/kernel/ged, /sys/class/devfreq and the Mali GPU files. This access is used <strong>for reading only</strong>: SysCore does not change any device setting through it. The readings stay on the device only and are not sent anywhere. The user can revoke the authorization in Shizuku at any time.</li>
+    <li><strong>Advanced access (Shizuku, optional):</strong> if the user installs the Shizuku app and authorizes SysCore in it, SysCore reads sensors that Android blocks for regular apps: the system thermal service and sensor temperatures, battery data (such as capacity) and GPU load and frequency, from system files such as /sys/class/thermal, /sys/class/power_supply, /sys/class/kgsl, /sys/kernel/gpu, /sys/kernel/ged, /sys/class/devfreq and the Mali GPU files. To show FPS in the overlay, SysCore also reads from Android's display compositor (SurfaceFlinger) the list of visible windows, whose names include the name of the app in the foreground, and the times at which frames are displayed; this list is used only in memory, to choose which window to measure, and is not stored. This access is used <strong>for reading only</strong>: SysCore does not change any device setting through it. The readings stay on the device only and are not sent anywhere. The user can revoke the authorization in Shizuku at any time.</li>
     <li><strong>Performance tests (benchmark):</strong> to measure storage and memory speed, the app creates temporary files in its private storage and deletes them when the test ends. The results stay on the device only and are not sent anywhere. If you tap share, the app creates an image of the result in its temporary storage and hands it to the Android share sheet.</li>
     <li><strong>Access code:</strong> if the user redeems a Pro access code, the app stores on the device a protected version (hash) of the code and its expiry date. This data is not sent anywhere.</li>
     <li><strong>Technical device information:</strong> model, manufacturer and Android version, required for compatibility.</li>
@@ -273,16 +279,17 @@
   <h2>3. Local storage and backup</h2>
   <p>Battery history, charging records, gamer sessions, Creators tab tests and statistics are stored locally on the device, in the app's private storage and local database (Room).</p>
   <p>File analysis for the storage feature is performed on the device itself. SysCore does not send the user's files or their content to external servers, and only deletes files upon user action.</p>
-  <p>The app allows Android automatic backup. Depending on device settings and the app's rules, local data may be included in the backup of the user's Google account, under the policies of Google and the device manufacturer.</p>
+  <p>The app allows Android automatic backup. Depending on device settings, app preferences and benchmark history may be included in the backup of the user's Google account, under the policies of Google and the device manufacturer. Data that only makes sense on the device itself is kept <strong>out</strong> of the backup: battery history and records, battery measurements and the capacity you entered, purchase status, the ad consent choice, error reports and widget settings.</p>
 
   <h2>4. Purposes of use</h2>
   <ul>
     <li>Display monitoring information, indicators, charts and statistics.</li>
     <li>Track battery status and temperature and record charging sessions.</li>
+    <li>Estimate battery capacity and health from measurements made on the device itself.</li>
     <li>Display performance during games, including through the overlay.</li>
     <li>Run charger and power-consumption tests, compare results and generate reports the user can save or share (Creators tab).</li>
     <li>Run performance and hardware tests and analyses (such as GPS and microphone), when the user opens them.</li>
-    <li>Display more accurate temperatures and GPU and battery data through Shizuku, when the user enables it.</li>
+    <li>Display more accurate temperatures, GPU and battery data and overlay FPS through Shizuku, when the user enables it.</li>
     <li>Identify files that can be removed to free up space.</li>
     <li>Display the connected Wi-Fi network and measure internet speed, when the user starts the test.</li>
     <li>Show information about installed apps (Apps tab).</li>
@@ -332,6 +339,7 @@
     <li><strong>Installed app visibility:</strong> the app declares to Android that it needs to see apps with an icon in the app drawer (and Shizuku, if installed), for the Apps tab. It does not use the permission to access all packages.</li>
     <li><strong>Display over other apps:</strong> show the performance overlay over games and apps.</li>
     <li><strong>Foreground services and notifications:</strong> keep monitoring, the overlay and Creators tab tests active, show the notification required by Android and send the battery alerts and weekly summary the user turns on.</li>
+    <li><strong>Start with the device (RECEIVE_BOOT_COMPLETED):</strong> turn battery monitoring back on after the device restarts, only if you left it on.</li>
     <li><strong>Phone state (optional):</strong> required by Android to report the mobile network type (4G, 5G) in the Network tab. It is requested only when the user taps "Grant permission" in that tab. The app does not access calls, messages, contacts or the phone number.</li>
     <li><strong>Keep the device awake (WAKE_LOCK):</strong> prevent the processor from sleeping during a user-started power-consumption test in the Creators tab, so the recording has no gaps. It is released when the test ends.</li>
     <li><strong>Vibration:</strong> alerts and user feedback.</li>
@@ -342,13 +350,13 @@
   <p>The app does not use these permissions for purposes other than those stated.</p>
 
   <h2>9. Background execution and overlay</h2>
-  <p>Battery monitoring, the performance overlay and the charger and power-consumption tests in the Creators tab run as foreground services, accompanied by a notification. Battery monitoring is on by default: it starts when you open the app and can be turned off at any time in Settings › General › "Monitor the battery in the background"; its notification is silent. The overlay and the Creators tab tests are always started by you, and tests can be finished from their notification. Tests end when they complete, when the user finishes them or when they are interrupted, and the app never starts them on its own. While active, they access only the technical information needed for the feature, such as RAM, CPU, battery and network.</p>
+  <p>Battery monitoring, the performance overlay and the charger and power-consumption tests in the Creators tab run as foreground services, accompanied by a notification. Battery monitoring is on by default: it starts when you open the app and, while it is on, resumes on its own after the device restarts or the app is updated. It can be turned off at any time in Settings › General › "Monitor the battery in the background"; once off, it does not come back on its own. Its notification is silent, and in Settings you choose what it shows (battery, CPU or both) and whether it appears on the lock screen. The overlay and the Creators tab tests are always started by you, and tests can be finished from their notification. Tests end when they complete, when the user finishes them or when they are interrupted, and the app never starts them on its own. While active, they access only the technical information needed for the feature, such as RAM, CPU, battery and network.</p>
 
   <h2>10. Information security</h2>
   <p>We adopt reasonable technical measures, such as the app's private storage, a local database protected by the operating system and secure connections to external services. However, no system can guarantee absolute security.</p>
 
   <h2>11. Data retention and deletion</h2>
-  <p>Local data remains on the device for as long as it is needed for the app's history. The user can delete records through the app's options (including Creators tab tests), or clear the app's data in Android settings. Reports the user saved to Pictures or Downloads are the user's own files and remain until the user deletes them. Uninstalling removes the data from the app's private storage. Your ad consent choice, preferences and usage counters stay on the device until you clear the app's data or uninstall it.</p>
+  <p>Local data remains on the device for as long as it is needed for the app's history. The user can delete records through the app's options (including Creators tab tests), or clear the app's data in Android settings. The measurements used to learn battery capacity are limited to the 1,000 most recent records and can be deleted at any time in Settings › Advanced › Battery capacity. Reports the user saved to Pictures or Downloads are the user's own files and remain until the user deletes them. Uninstalling removes the data from the app's private storage. Your ad consent choice, preferences and usage counters stay on the device until you clear the app's data or uninstall it.</p>
   <p>Data processed by third parties, such as the advertising platform and Google Play, follows those providers' retention periods and procedures. To request deletion of data held by them, the user must contact them directly.</p>
 
   <h2>12. Children and teenagers</h2>
